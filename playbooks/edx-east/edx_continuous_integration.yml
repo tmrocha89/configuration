@@ -11,7 +11,7 @@
       nginx_sites:
       - cms
       - lms
-      - xqueue
+    # - xqueue
       - xserver
       nginx_default_sites:
       - lms
@@ -28,17 +28,20 @@
     - elasticsearch
     - forum
     - { role: notifier, NOTIFIER_DIGEST_TASK_INTERVAL: "5" }
-    - { role: "xqueue", update_users: True }
+    # - { role: "xqueue", update_users: True }
     - role: xserver
       when: XSERVER_GIT_IDENTITY|length > 0
     - edx_ansible
     - analytics_api
     - ecommerce
     - credentials
-    - veda_web_frontend
-    - veda_pipeline_worker
-    - veda_encode_worker
-    - video_pipeline_integration
+    - discovery
+    - role: journals
+      when: JOURNALS_ENABLED
+    # - veda_web_frontend
+    # - veda_pipeline_worker
+    # - veda_encode_worker
+    # - video_pipeline_integration
     - oauth_client_setup
     - role: datadog
       when: COMMON_ENABLE_DATADOG
