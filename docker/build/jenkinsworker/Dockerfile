@@ -57,4 +57,4 @@ RUN apt-get clean && \
 
 CMD ["/edx/app/supervisor/venvs/supervisor/bin/supervisord", "-n", "--configuration", "/edx/app/supervisor/supervisord.conf"]
 
-EXPOSE 18000 18010 22
+EXPOSE 22
