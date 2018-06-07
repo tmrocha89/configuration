@@ -491,10 +491,14 @@ EDXAPP_PRIVATE_REQUIREMENTS:
     # Peer instruction XBlock
     - name: ubcpi-xblock==0.6.4
     # Vector Drawing and ActiveTable XBlocks (Davidson)
-    - name: git+https://github.com/open-craft/xblock-vectordraw.git@c57df9d98119fd2ca4cb31b9d16c27333cdc65ca#egg=xblock-vectordraw==0.2.1
-      extra_args: -e
-    - name: git+https://github.com/open-craft/xblock-activetable.git@e933d41bb86a8d50fb878787ca680165a092a6d5#egg=xblock-activetable
-      extra_args: -e
+    #
+    # Commented by TmRocha89
+    #
+    #Error installing for ginkgo2
+    #- name: git+https://github.com/open-craft/xblock-vectordraw.git@c57df9d98119fd2ca4cb31b9d16c27333cdc65ca#egg=xblock-vectordraw==0.2.1
+    #  extra_args: -e
+    #- name: git+https://github.com/open-craft/xblock-activetable.git@e933d41bb86a8d50fb878787ca680165a092a6d5#egg=xblock-activetable
+    #  extra_args: -e
 
 # List of custom middlewares that should be used in edxapp to process
 # incoming HTTP resquests. Should be a list of plain strings that fully
