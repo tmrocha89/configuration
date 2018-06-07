@@ -380,6 +380,12 @@
   tags:
     - manage
 
+- name: list directory content
+  shell:  "ls -al /edx/app/edxapp/venvs/edxapp/bin/"
+  become_user: "{{ edxapp_user }}"
+  tags:
+    - manage
+
 - name: create symlinks from the venv bin dir and repo dir
   file:
     src: "{{ item }}"
