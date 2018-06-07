@@ -7,9 +7,9 @@
 # This allows the dockerfile to update /edx/app/edx_ansible/edx_ansible
 # with the currently checked-out configuration repo.
 
-ARG BASE_IMAGE_TAG=latest
-FROM edxops/xenial-common:${BASE_IMAGE_TAG}
-MAINTAINER edxops
+ARG BASE_IMAGE_TAG=ginkgo2
+FROM tmrocha89/xenial-common:${BASE_IMAGE_TAG}
+LABEL maintainer="Tiago Rocha<tmrocha89@gmail.com>"
 
 ARG ARG_DEVPI_SERVER_VERSION=4.4.0
 ARG ARG_DEVPI_WEB_VERSION=3.2.2
