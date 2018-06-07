@@ -1,5 +1,5 @@
-FROM edxops/xenial-common:latest
-MAINTAINER edxops
+FROM tmrocha89/xenial-common:ginkgo2
+LABEL maintainer="Tiago Rocha<tmrocha89@gmail.com>"
 
 USER root
 ADD . /edx/app/edx_ansible/edx_ansible

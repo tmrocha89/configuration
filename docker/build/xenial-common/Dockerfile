@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER edxops
+LABEL maintainer="Tiago Rocha<tmrocha89@gmail.com>"
 
 # Set locale to UTF-8 which is not the default for docker.
 # See the links for details:
