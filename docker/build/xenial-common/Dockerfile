@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER edxops
+LABEL maintainer="Tiago Rocha <tmrocha89@gmail.com>"
 
 # Set locale to UTF-8 which is not the default for docker.
 # See the links for details:
@@ -15,9 +15,14 @@ ENV LC_ALL en_US.UTF-8
 
 ENV ANSIBLE_REPO="https://github.com/edx/ansible"
 ENV CONFIGURATION_REPO="https://github.com/edx/configuration.git"
-ARG OPENEDX_RELEASE=master
+ARG OPENEDX_RELEASE=open-release/ginkgo.master
 ENV CONFIGURATION_VERSION="${OPENEDX_RELEASE}"
 
-ADD util/install/ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
+#ADD util/install/ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
+#
+# Before build this image, Copy the file util/install/ansible-bootstrap.sh
+# to this directory.
+#
+ADD ./ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
 RUN chmod +x /tmp/ansible-bootstrap.sh
 RUN /tmp/ansible-bootstrap.sh
