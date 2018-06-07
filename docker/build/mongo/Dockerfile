@@ -1,5 +1,6 @@
-FROM edxops/xenial-common:latest
-MAINTAINER edxops
+ARG BASE_IMAGE_TAG=ginkgo2
+FROM tmrocha89/xenial-common:${BASE_IMAGE_TAG}
+LABEL maintainer="Tiago Rocha<tmrocha89@gmail.com>"
 
 ADD . /edx/app/edx_ansible/edx_ansible
 COPY docker/build/mongo/ansible_overrides.yml /
