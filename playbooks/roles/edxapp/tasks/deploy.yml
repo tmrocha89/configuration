@@ -222,8 +222,8 @@
 #
 - name: install nodenv
   command: pip install nodeenv
-  become_user: "{{ edx_django_service_user }}"
-  environment: "{{ edx_django_service_environment }}"
+  become_user: "{{ edxapp_user }}"
+  environment: "{{ edxapp_environment }}"
   tags:
     - install
     - install:system-requirements
