@@ -1,9 +1,9 @@
-FROM edxops/precise-common:latest
-MAINTAINER edxops
+FROM tmrocha89/xenial-common:ginkgo2
+LABEL maintainer="Tiago Rocha <tmrocha89@gmail.com>"
 
 USER root
 ADD . /edx/app/edx_ansible/edx_ansible
-COPY docker/build/nginx/ansible_overrides.yml /
+COPY ./ansible_overrides.yml /
 WORKDIR /edx/app/edx_ansible/edx_ansible/docker/plays
 
 RUN /edx/app/edx_ansible/venvs/edx_ansible/bin/ansible-playbook nginx.yml -c local \
