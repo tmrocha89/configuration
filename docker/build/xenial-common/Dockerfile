@@ -15,7 +15,7 @@ ENV LC_ALL en_US.UTF-8
 
 ENV ANSIBLE_REPO="https://github.com/edx/ansible"
 ENV CONFIGURATION_REPO="https://github.com/edx/configuration.git"
-ARG OPENEDX_RELEASE=open-release/ginkgo.master
+ARG OPENEDX_RELEASE=open-release/ginkgo.2
 ENV CONFIGURATION_VERSION="${OPENEDX_RELEASE}"
 
 ADD util/install/ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
