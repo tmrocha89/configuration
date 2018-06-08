@@ -18,11 +18,6 @@ ENV CONFIGURATION_REPO="https://github.com/edx/configuration.git"
 ARG OPENEDX_RELEASE=open-release/ginkgo.master
 ENV CONFIGURATION_VERSION="${OPENEDX_RELEASE}"
 
-#ADD util/install/ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
-#
-# Before build this image, Copy the file util/install/ansible-bootstrap.sh
-# to this directory.
-#
-ADD ./ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
+ADD util/install/ansible-bootstrap.sh /tmp/ansible-bootstrap.sh
 RUN chmod +x /tmp/ansible-bootstrap.sh
 RUN /tmp/ansible-bootstrap.sh
