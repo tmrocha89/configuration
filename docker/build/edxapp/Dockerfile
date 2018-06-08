@@ -10,7 +10,7 @@
 
 ARG IMAGE_PREFIX
 FROM tmrocha89/xenial-common:ginkgo2
-LABEL "maintainer=Tiago Rocha <tmrocha89@gmail.com>"
+LABEL maintainer="Tiago Rocha <tmrocha89@gmail.com>"
 USER root
 CMD ["/edx/app/supervisor/venvs/supervisor/bin/supervisord", "-n", "--configuration", "/edx/app/supervisor/supervisord.conf"]
 
