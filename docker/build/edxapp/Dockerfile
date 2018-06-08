@@ -9,8 +9,8 @@
 
 
 ARG IMAGE_PREFIX
-FROM edxops/${IMAGE_PREFIX}xenial-common:latest
-MAINTAINER edxops
+FROM tmrocha89/xenial-common:ginkgo2
+LABEL "maintainer=Tiago Rocha <tmrocha89@gmail.com>"
 USER root
 CMD ["/edx/app/supervisor/venvs/supervisor/bin/supervisord", "-n", "--configuration", "/edx/app/supervisor/supervisord.conf"]
 
@@ -21,7 +21,7 @@ COPY docker/build/edxapp/ansible_overrides.yml /
 COPY docker/build/edxapp/devstack.yml /
 COPY docker/build/devstack/ansible_overrides.yml /devstack/ansible_overrides.yml
 
-ARG OPENEDX_RELEASE=master
+ARG OPENEDX_RELEASE=open-release/ginkgo.2
 ENV OPENEDX_RELEASE=${OPENEDX_RELEASE}
 RUN sudo /edx/app/edx_ansible/venvs/edx_ansible/bin/ansible-playbook edxapp.yml \
     -c local -i '127.0.0.1,' \
